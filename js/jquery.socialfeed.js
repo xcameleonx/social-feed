@@ -534,6 +534,7 @@ if (typeof Object.create !== 'function') {
                         post.author_name = element.user.full_name || element.user.username;
                         post.message = (element.caption && element.caption) ? element.caption.text : '';
                         post.description = '';
+                        post.imgaes = element.images;
                         post.link = element.link;
                         if (options.show_media) {
                             post.attachment = '<img class="attachment" src="' + element.images.standard_resolution.url + '' + '" />';
