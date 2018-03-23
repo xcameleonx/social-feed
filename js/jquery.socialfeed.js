@@ -26,7 +26,6 @@ if (typeof Object.create !== 'function') {
             social_networks = ['facebook', 'instagram', 'vk', 'google', 'blogspot', 'twitter', 'pinterest', 'rss'],
             posts_to_load_count = 0,
             loaded_post_count = 0;
-        // container.empty().css('display', 'block');
         //---------------------------------------------------------------------------------
 
         //---------------------------------------------------------------------------------
@@ -48,12 +47,7 @@ if (typeof Object.create !== 'function') {
         calculatePostsToLoadCount();
 
         function fireCallback() {
-            var fire = true;
-            /*$.each(Object.keys(loaded), function() {
-                if (loaded[this] > 0)
-                    fire = false;
-            });*/
-            if (fire && options.callback) {
+            if (options.callback) {
                 options.callback();
             }
         }
@@ -167,7 +161,7 @@ if (typeof Object.create !== 'function') {
                 }
 
                 loaded_post_count++;
-                if (loaded_post_count == posts_to_load_count) {
+                if (loaded_post_count >= posts_to_load_count) { //Just in case we have looped too may times.
                     fireCallback();
                 }
 
@@ -182,9 +176,7 @@ if (typeof Object.create !== 'function') {
                     social_networks.forEach(function(network) {
                         if (options[network]) {
                             if ( options[network].accounts ) {
-                                //loaded[network] = 0;
                                 options[network].accounts.forEach(function(account) {
-                                    //loaded[network]++;
                                     Feed[network].getData(account);
                                 });
                             } else if ( options[network].urls ) {
@@ -350,7 +342,7 @@ if (typeof Object.create !== 'function') {
                         } else if (element.object_id) {
                             image_url = Feed.facebook.graph + element.object_id + '/picture/?type=normal';
                         }
-                        return '<img class="attachment" src="' + image_url + '" />';
+                        return image_url;
                     },
                     getExternalImageURL: function(image_url, parameter) {
                         image_url = decodeURIComponent(image_url).split(parameter + '=')[1];
@@ -385,9 +377,10 @@ if (typeof Object.create !== 'function') {
 
                         if (options.show_media === true) {
                             if (element.picture) {
-                                var attachment = Feed.facebook.utility.prepareAttachment(element);
-                                if (attachment) {
-                                    post.attachment = attachment;
+                                var image = Feed.facebook.utility.prepareAttachment(element);
+                                if (image) {
+                                    post.images = [image];
+                                    post.attachment = '<img class="attachment" src="' + image + '" />';
                                 }
                             }
                         }
@@ -451,6 +444,7 @@ if (typeof Object.create !== 'function') {
                                         }
                                     }
                                     post.attachment = '<img class="attachment" src="' + image + '"/>';
+                                    post.images = [image];
                                 });
                             }
                         }
@@ -534,6 +528,7 @@ if (typeof Object.create !== 'function') {
                         post.author_name = element.user.full_name || element.user.username;
                         post.message = (element.caption && element.caption) ? element.caption.text : '';
                         post.description = '';
+                        post.images = element.images;
                         post.link = element.link;
                         if (options.show_media) {
                             post.attachment = '<img class="attachment" src="' + element.images.standard_resolution.url + '' + '" />';
