@@ -1,4 +1,4 @@
-# Social-feed
+# Socialfeeds
 
 The jQuery plugin which shows user feeds from the most popular social networks. 
 
@@ -25,7 +25,7 @@ bower install socialfeeds
 Load dependency CSS:
 ```html
 <!-- Social-feed css -->
-<link href="bower_components/social-feed/css/jquery.socialfeeds.css" rel="stylesheet" type="text/css">
+<link href="bower_components/socialfeeds/css/socialfeeds.css" rel="stylesheet" type="text/css">
 <!-- font-awesome for social network icons -->
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 ```
@@ -46,7 +46,7 @@ Load dependency javascript
 <!-- Moment Locale to format the date to your language (eg. italian lang)-->
 <script src="bower_components/moment/locale/it.js"></script>
 <!-- Social-feed js -->
-<script src="bower_components/social-feed/js/jquery.socialfeeds.js"></script>
+<script src="bower_components/social-feed/js/socialfeeds.js"></script>
 ```
 Initialize the social-feed plugin:
 
