@@ -1,2 +1,4 @@
 /sass/.sass-cache
 .idea/
+bower_components/
+package-lock.json

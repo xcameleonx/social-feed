@@ -1,9 +1,9 @@
 {
-    "name": "social-feed",
-    "version": "0.1.2",
-    "description": "A jQuery plugin that shows a user feed from the most popular social networks", 
+    "name": "socialfeeds",
+    "version": "0.1.3",
+    "description": "A jQuery plugin that shows user feeds from popular social networks. Fork of social-feed.", 
     "bower": {
-        "version": "0.1.2", 
+        "version": "0.1.3", 
         "dependencies": {
             "jquery": "~2.1.1",
             "doT": "~1.0.1",
