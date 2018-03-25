@@ -1,11 +1,11 @@
 {
-  "name": "socialfeeds.js",
+  "name": "socialfeeds",
   "version": "0.1.3",
   "homepage": "https://github.com/xcameleonx/social-feed",
   "authors": [
     {
       "name": "Thomas Grant",
-      "email": "thomas@thomasgrant.xyz",
+      "email": "thoma.p.grant@gmail.com",
       "homepage": "https://www.thomasgrant.xyz/"
     }
   ],
@@ -14,13 +14,12 @@
     "Facebook",
     "Instagram",
     "Google+",
-    "Vkontakte",
     "Pinterest",
     "social",
     "feed"
   ],
   "license":"MIT",
-  "main": "js/jquery.socialfeed.js",
+  "main": "js/socialfeeds.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/xcameleonx/social-feed.git"

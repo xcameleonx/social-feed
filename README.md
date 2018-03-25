@@ -1,37 +1,31 @@
 # Social-feed
 
-The jQuery plugin which shows user feeds from the most popular social networks.
+The jQuery plugin which shows user feeds from the most popular social networks. 
 
-![](http://habrastorage.org/files/286/85e/03e/28685e03ef2b4bdc8f7da551b339426e.png)
+A fork of https://github.com/pavelk2/social-feed
 
-## Demo
+This fork addresses known and resolved bugs, that have not been released.
 
-http://pavelk2.github.io/social-feed-example/
 
 Social networks supported:
 - [x] Facebook
 - [x] Instagram
 - [x] Twitter
 - [x] Google+
-- [x] VK
 - [x] Pinterest
 - [x] RSS
-- [ ] Blogspot
 
 ## Installation
 via http://bower.io:
 ```
-bower install social-feed
-```
-or download the latest release:
+bower install socialfeeds
 
-https://github.com/pavelk2/social-feed/releases
 ## Getting started
 
 Load dependency CSS:
 ```html
 <!-- Social-feed css -->
-<link href="bower_components/social-feed/css/jquery.socialfeed.css" rel="stylesheet" type="text/css">
+<link href="bower_components/social-feed/css/jquery.socialfeeds.css" rel="stylesheet" type="text/css">
 <!-- font-awesome for social network icons -->
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 ```
@@ -52,17 +46,17 @@ Load dependency javascript
 <!-- Moment Locale to format the date to your language (eg. italian lang)-->
 <script src="bower_components/moment/locale/it.js"></script>
 <!-- Social-feed js -->
-<script src="bower_components/social-feed/js/jquery.socialfeed.js"></script>
+<script src="bower_components/social-feed/js/jquery.socialfeeds.js"></script>
 ```
 Initialize the social-feed plugin:
 
 ```html
 <script>
     $(document).ready(function(){
-        $('.social-feed-container').socialfeed({
+        $('.social-feed-container').socialfeeds({
             // INSTAGRAM
             instagram:{
-                accounts: ['@teslamotors','#teslamotors'],  //Array: Specify a list of accounts from which to pull posts
+                accounts: ['@teslamotors','#teslamotors'],  //Array: Specify a list of accounts / tags from which to pull posts
                 limit: 2,                                    //Integer: max number of posts to load
                 client_id: 'YOUR_INSTAGRAM_CLIENT_ID',       //String: Instagram client id (optional if using access token)
                 access_token: 'YOUR_INSTAGRAM_ACCESS_TOKEN' //String: Instagram access token
@@ -81,7 +75,7 @@ To alter the default post markup, edit ````template.html```` or pass a template 
 
 ##All Settings
 
-Social-feed.js supports many social networks. If you don't need or want to pull data from them all, remove the ones you don't need.
+Socialfeeds supports many social networks. If you don't need or want to pull data from them all, remove the ones you don't need.
 
 ````javascript
 $('.social-feed-container').socialfeed({
@@ -100,13 +94,6 @@ $('.social-feed-container').socialfeed({
         consumer_secret: 'YOUR_CONSUMER_SECRET_KEY', //String: consumer secret key. make sure to have your app read-only
         tweet_mode: 'compatibility'                  //String: change to "extended" to show the whole tweet
      },
-
-    // VK
-    vk:{
-        accounts: ['@125936523','#teslamotors'],    //Array: Specify a list of accounts from which to pull posts
-        limit: 2,                                   //Integer: max number of posts to load
-        source: 'all'                               //String: VK API post filter. Possible values: "Owner","Others","all","suggests"
-    },
 
     // GOOGLEPLUS
     google:{
@@ -177,14 +164,5 @@ Please note, when using a custom template, that the ordering mechanism depends o
 
 ## Issues
 Found a bug or want a feature to be implemented?
-Please report it here https://github.com/pavelk2/social-feed/issues
+Please report it here https://github.com/xcameleonx/social-feed/issues
 
-Currently we work on server side: (https://github.com/pavelk2/social-feed-server)
-## Let us know
-
-If you use this plugin, please <a href="https://gitter.im/pavelk2/social-feed" target="_blank">write us a short message</a> with a link to the project where you embed the plugin, and some features you want to have implemented here. It helps us to stay focused on the important issues. *It is not mandatory, but we really appreciate it!*
-
-Do you want to become a part of the Social-feed? Write us and become an active contributor.
-
-
-[![Join the chat at https://gitter.im/pavelk2/social-feed](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pavelk2/social-feed?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
